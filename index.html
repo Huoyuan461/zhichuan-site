@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>直传 Zhichuan — 传文件，就该这么简单</title>
+<style>
+  :root { --brand:#FF6B1A; --ink:#1a1a2e; --muted:#6b7280; --bg:#fafaf9; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+  header { padding:28px 0; display:flex; align-items:center; gap:12px; }
+  .logo { width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg,#FF6B1A,#FF9A3D); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:20px; }
+  .brand { font-size:22px; font-weight:800; letter-spacing:2px; }
+  .brand small { font-weight:400; color:var(--muted); letter-spacing:1px; font-size:13px; margin-left:8px; }
+  .hero { text-align:center; padding:72px 0 56px; }
+  .hero h1 { font-size:44px; font-weight:800; letter-spacing:1px; margin-bottom:16px; }
+  .hero h1 em { font-style:normal; color:var(--brand); }
+  .hero p { font-size:18px; color:var(--muted); max-width:600px; margin:0 auto 36px; }
+  .dl-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
+  .dl-btn { display:inline-flex; align-items:center; gap:10px; padding:14px 28px; border-radius:14px; font-size:16px; font-weight:600; text-decoration:none; transition:transform .15s; }
+  .dl-btn:hover { transform:translateY(-2px); }
+  .dl-primary { background:var(--brand); color:#fff; box-shadow:0 8px 24px rgba(255,107,26,.3); }
+  .dl-ghost { background:#fff; color:var(--ink); border:1.5px solid #e5e7eb; }
+  .dl-disabled { background:#f3f4f6; color:#9ca3af; border:1.5px solid #e5e7eb; cursor:default; }
+  .dl-note { font-size:13px; color:var(--muted); }
+  .pains { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; padding:40px 0; }
+  .pain { background:#fff; border-radius:16px; padding:28px; box-shadow:0 2px 12px rgba(0,0,0,.04); }
+  .pain .icon { font-size:28px; margin-bottom:12px; }
+  .pain h3 { font-size:17px; margin-bottom:8px; }
+  .pain p { font-size:14px; color:var(--muted); }
+  .section-title { text-align:center; font-size:28px; font-weight:800; margin:56px 0 8px; }
+  .section-sub { text-align:center; color:var(--muted); margin-bottom:36px; }
+  .pricing { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; padding-bottom:24px; }
+  .plan { background:#fff; border-radius:18px; padding:36px 30px; box-shadow:0 2px 12px rgba(0,0,0,.04); position:relative; }
+  .plan.hot { border:2px solid var(--brand); box-shadow:0 8px 32px rgba(255,107,26,.15); }
+  .plan .tag { position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--brand); color:#fff; font-size:12px; padding:3px 14px; border-radius:20px; }
+  .plan h3 { font-size:18px; margin-bottom:6px; }
+  .plan .price { font-size:38px; font-weight:800; margin:10px 0 4px; }
+  .plan .price small { font-size:14px; font-weight:400; color:var(--muted); }
+  .plan ul { list-style:none; margin:20px 0 28px; font-size:14px; color:var(--muted); }
+  .plan ul li { padding:6px 0; }
+  .plan ul li::before { content:"✓ "; color:var(--brand); font-weight:700; }
+  .plan .cta { display:block; text-align:center; padding:12px; border-radius:12px; text-decoration:none; font-weight:600; }
+  .cta-free { background:#f3f4f6; color:var(--ink); }
+  .cta-hot { background:var(--brand); color:#fff; }
+  footer { text-align:center; padding:48px 0 36px; color:var(--muted); font-size:13px; }
+  footer a { color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">直</div>
+    <div class="brand">直传<small>ZHICHUAN</small></div>
+  </header>
+
+  <section class="hero">
+    <h1>传文件，就该<em>这么简单</em></h1>
+    <p>手机、电脑、平板，同一 Wi-Fi 下点对点直传。原画质、无压缩，断网也能用，不经过任何服务器。</p>
+    <div class="dl-row">
+      <a class="dl-btn dl-primary" href="#" id="dl-android">📱 Android 下载</a>
+      <a class="dl-btn dl-ghost" href="#" id="dl-windows">🖥 Windows 下载</a>
+    </div>
+    <div class="dl-row">
+      <span class="dl-btn dl-disabled">🍎 macOS 即将上线</span>
+      <span class="dl-btn dl-disabled">📲 iOS 审核中</span>
+    </div>
+    <p class="dl-note">Android 建议官网直接装 APK；iOS 上架后 App Store 搜索「直传」</p>
+  </section>
+
+  <section class="pains">
+    <div class="pain">
+      <div class="icon">🎬</div>
+      <h3>微信传视频被压成渣？</h3>
+      <p>直传点对点原文件直达，4K 视频传过去还是 4K，一帧不压。</p>
+    </div>
+    <div class="pain">
+      <div class="icon">🔀</div>
+      <h3>苹果安卓互传要折腾？</h3>
+      <p>五端全支持：Android / iOS / Windows / macOS / Linux，跨生态一把梭。</p>
+    </div>
+    <div class="pain">
+      <div class="icon">📡</div>
+      <h3>没网就传不了？</h3>
+      <p>局域网直连，不走云端不断网，企业内网、飞机高铁照常用。</p>
+    </div>
+  </section>
+
+  <h2 class="section-title">定价</h2>
+  <p class="section-sub">个人版永久免费，企业版按年付费</p>
+  <section class="pricing">
+    <div class="plan">
+      <h3>个人版</h3>
+      <div class="price">¥0<small> / 永久</small></div>
+      <ul>
+        <li>全功能文件互传</li>
+        <li>不限速、不限量</li>
+        <li>无广告</li>
+        <li>五端全支持</li>
+      </ul>
+      <a class="cta cta-free" href="#dl-android" onclick="document.getElementById('dl-android').scrollIntoView({behavior:'smooth'});return false;">免费下载</a>
+    </div>
+    <div class="plan hot">
+      <span class="tag">最受欢迎</span>
+      <h3>专业版</h3>
+      <div class="price">¥199<small> / 年</small></div>
+      <ul>
+        <li>个人版全部功能</li>
+        <li>多设备统一管理</li>
+        <li>传输历史云同步</li>
+        <li>优先客服支持</li>
+      </ul>
+      <a class="cta cta-hot" href="https://huoyuan461.github.io/TransRing/" target="_blank">联系购买</a>
+    </div>
+    <div class="plan">
+      <h3>企业版</h3>
+      <div class="price">¥799<small> / 年</small></div>
+      <ul>
+        <li>专业版全部功能</li>
+        <li>20 台设备授权</li>
+        <li>集中部署与审计日志</li>
+        <li>定制品牌与专属支持</li>
+      </ul>
+      <a class="cta cta-free" href="https://huoyuan461.github.io/TransRing/" target="_blank">联系购买</a>
+    </div>
+  </section>
+
+  <footer>
+    直传 Zhichuan · 基于开源项目 LocalSend（Apache-2.0）二次开发<br>
+    © 2026 闪木科技 · <a href="https://github.com/Huoyuan461/localsend">GitHub</a>
+  </footer>
+</div>
+<script>
+  // 下载链接占位，构建产物就绪后替换
+  document.getElementById('dl-android').href = 'https://github.com/Huoyuan461/localsend/releases';
+  document.getElementById('dl-windows').href = 'https://github.com/Huoyuan461/localsend/releases';
+</script>
+</body>
+</html>
